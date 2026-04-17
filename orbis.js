@@ -62,6 +62,15 @@ function enviarParaAPI(temp) {
   req.end(JSON.stringify(dados));
 }
 
+
+const response = await fetch("https://oribis-5hnm.onrender.com/sensores",{
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-KEY": "SUA_CHAVE_AQUI"
+  },
+  body: JSON.stringify({  })
+})
+
 // ==============================
 // LEITURA + ENVIO
 // ==============================

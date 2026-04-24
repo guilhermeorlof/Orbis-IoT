@@ -6,7 +6,7 @@
 const DHT_PIN = 32;
 
 // Inicializa sensor
-let dht = require("dht11certo.js").connect(DHT_PIN);
+let dht = require("dht11.js").connect(DHT_PIN);
 
 // ==============================
 // FUNÇÃO DE LEITURA
@@ -25,4 +25,4 @@ function lerDHT() {
 
 }
 
-setInterval(lerDHT, 2000); // Lê a cada 2 segundos
+setInterval(lerDHT, 1000); // Lê a cada 2 segundos

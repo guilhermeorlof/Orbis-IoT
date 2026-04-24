@@ -59,4 +59,4 @@ function medir() {
 }
 
 // Executa a cada 100ms
-setInterval(medir, 100);
+setInterval(medir, 1000);

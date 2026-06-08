@@ -22,7 +22,7 @@ try {
 } catch(e) {}
 
 try {
-  dht = require("dht11.js").connect(32);
+  dht = require("dht11.js").connect(25);
 } catch(e) {}
 
 var mqttConectado = false;

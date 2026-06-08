@@ -22,7 +22,7 @@ try {
 } catch(e) {}
 
 try {
-  dht = require("dht11.js").connect(32);
+  dht = require("dht11.js").connect(25);
 } catch(e) {}
 
 var mqttConectado = false;
@@ -36,6 +36,7 @@ var temperaturas = [];
 var sensib = 16384;
 var ruido = 0.5;
 var ultimaLeituraDHT = 0;
+var id_sensor = 0;
 
 
 // =========================================
@@ -162,16 +163,16 @@ function publicarLeitura() {
   vibracoes = [];
   temperaturas = [];
 
-  console.log("V:" + v_rms.toFixed(2) + " T:" + t_media.toFixed(1) + " MQTT:" + (mqttConectado ? "OK" : "XX"));
+  console.log("ID:"+id_sensor+ " V:" + v_rms.toFixed(2) + " T:" + t_media.toFixed(1) + " MQTT:" + (mqttConectado ? "OK" : "XX"));
 
   if (!mqttConectado || !mqtt) return;
 
   try {
     mqtt.publish(MQTT_TOPIC, JSON.stringify({
-      vibracao_rms: v_rms,
-      temperatura: t_media,
-      status: "online",
-      ts: Date.now()
+      sensorId: id_sensor,
+      temperatura: t_media.toFixed(2),
+      vibracao_rms: v_rms.toFixed(2)
+     
     }));
   } catch(e) {}
 }

@@ -3,8 +3,8 @@
 // MPU6050 + DHT11 - MQTT HiveMQ Public
 // ==============================
 
-var WIFI_SSID  = "iPhone";
-var WIFI_PASS  = "1604iphone";
+var WIFI_SSID  = "Acaba rita plez ";
+var WIFI_PASS  = "idiotathur";
 var MQTT_HOST  = "broker.hivemq.com";
 var MQTT_PORT  = 1883;
 var MQTT_ID    = "esp32-orbis-" + (Math.random() * 10000 | 0);
@@ -36,7 +36,7 @@ var temperaturas = [];
 var sensib = 16384;
 var ruido = 0.5;
 var ultimaLeituraDHT = 0;
-var id_sensor = 0;
+var id_sensor = 7;
 
 
 // =========================================
